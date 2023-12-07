@@ -1,0 +1,22 @@
+RewriteEngine On
+RewriteBase /studikasus/
+
+RewriteCond %(REQUEST_FILENAME) !-f
+RewriteCond %(REQUEST_FILENAME) !-d
+RewriteRule ^home/?$ index.php?page=$1 [L]
+
+RewriteCond %(REQUEST_FILENAME) !-f
+RewriteCond %(REQUEST_FILENAME) !-d
+RewriteRule ^user/?$ views/user/index.php?page=$1 [L]
+RewriteRule ^tambahUser/?$ views/user/tambah.php
+RewriteRule ^proses_tambahUser/?$ views/user/proses_tambah.php
+RewriteRule ^editUser/?$ views/user/edit.php
+RewriteRule ^hapusUser/?$ views/user/hapus.php
+
+RewriteCond %(REQUEST_FILENAME) !-f
+RewriteCond %(REQUEST_FILENAME) !-d
+RewriteRule ^produk/?$ views/produk/index.php?page=$1 [L]
+RewriteRule ^tambahProduk/?$ views/produk/tambah.php
+RewriteRule ^proses_tambahProduk/?$ views/produk/proses_tambah.php
+RewriteRule ^editProduk/?$ views/produk/edit.php
+RewriteRule ^hapusProduk/?$ views/produk/hapus.php
